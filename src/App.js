@@ -20,6 +20,15 @@ const App = () => {
     }
   };
 
+  const handleIncrementBy2 = () => {
+    try {
+      const currentValue = parseFloat(input) || 0; // Handle empty or non-numeric input
+      setInput((currentValue + 2).toString());
+    } catch {
+      setInput('Error');
+    }
+  };
+
   return (
     <div className="App">
       <div className="calculator">
@@ -43,6 +52,7 @@ const App = () => {
           <button onClick={handleClear}>C</button>
           <button onClick={handleEvaluate}>=</button>
           <button onClick={() => handleButtonClick('/')}>/</button>
+          <button onClick={handleIncrementBy2}>Inc 2</button>
         </div>
       </div>
 
